@@ -387,29 +387,6 @@ Cada subpasta contém:
 
 ---
 
-## Progressão para Outras Categorias
-
-```
-_estudos-logica/          _estudos-javascript/      _estudos-php/
-     │                          │                        │
-     │  Raciocínio lógico       │  Sintaxe + DOM         │  ESTÁS AQUI
-     │  Algoritmos              │  Eventos + CRUD        │  Backend + MySQL
-     │  Git + POO               │  localStorage          │  Sessões + Auth
-     │                          │                        │
-     └──────────────────────────┴────────────────────────┘
-                     │
-                     ▼
-            _estudos-nodejs/   (APIs REST, Web Scraping)
-                     │
-                     ▼
-               NexusAuth        (Microsserviço completo)
-            (NestJS + PostgreSQL + Redis + Docker)
-```
-
-> O PHP é a base do back-end web tradicional. Os conceitos de CRUD, autenticação e sessões aprendidos aqui são diretamente aplicados — com mais escala e segurança — no NexusAuth.
-
----
-
 ## Roadmap — O que vem a seguir?
 
 | Meta | Estado |
