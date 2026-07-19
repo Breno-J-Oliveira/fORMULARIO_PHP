@@ -1,0 +1,54 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+    video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-height: 100%;
+      z-index: -100; /* fica atrás de todo o conteúdo */
+      object-fit: cover; /* cobre a tela sem distorcer */
+      filter: brightness(80%); /* escurece um pouco pra destacar o texto (opcional) */
+    }
+
+.forms{
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    padding: 24px;
+    border-radius: 12px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(10, 97, 248, 0.804);
+    box-shadow: 0 0 35px rgba(10, 97, 248, 0.804);
+}
+#container{
+    text-align: start;
+}
+
+button, input, select, textarea{
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 12px;
+    width: 95%;
+    font-size: 16px;
+}
+
+button{
+    background-color: #2382a4;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    transition: 0.8s;
+}
+
+button:hover{
+    background-color: #45aaf2;
+    scale: 1.04;
+}
+

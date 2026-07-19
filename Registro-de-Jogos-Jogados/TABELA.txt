@@ -1,0 +1,47 @@
+CREATE DATABASE jogos1;
+
+USE jogos1;
+
+CREATE TABLE meusjogos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  genero ENUM(
+    'Ação', 
+    'Aventura', 
+    'Ação/Aventura', 
+    'RPG', 
+    'MMORPG',
+    'FPS', 
+    'TPS', 
+    'Estratégia', 
+    'Corrida', 
+    'Esportes', 
+    'Simulação', 
+    'Indie', 
+    'Mundo Aberto', 
+    'Terror', 
+    'Puzzle'
+  ),
+  plataforma VARCHAR(50),
+  ano_lancamento YEAR,
+  preco DECIMAL(10,2),
+  nota DECIMAL(3,1) CHECK (nota >= 0 AND nota <= 10)
+);
+
+INSERT INTO meusjogos (nome, genero, plataforma, ano_lancamento, preco, nota) VALUES
+('The Witcher 3: Wild Hunt', 'RPG', 'PC / PS4 / Xbox One', 2015, 79.90, 9.7),
+('Grand Theft Auto V', 'Ação/Aventura', 'PC / PS4 / PS5 / Xbox', 2013, 99.90, 9.5),
+('Red Dead Redemption 2', 'Mundo Aberto', 'PC / PS4 / Xbox One', 2018, 149.90, 9.8),
+('Minecraft', 'Indie', 'PC / Console / Mobile', 2011, 119.99, 9.2),
+('Counter-Strike: Global Offensive', 'FPS', 'PC', 2012, 0.00, 8.9),
+('Valorant', 'FPS', 'PC', 2020, 0.00, 8.5),
+('God of War (2018)', 'Ação/Aventura', 'PC / PS4', 2018, 199.90, 9.6),
+('Horizon Zero Dawn', 'Aventura', 'PC / PS4', 2017, 99.90, 9.1),
+('League of Legends', 'MMORPG', 'PC', 2009, 0.00, 8.3),
+('The Last of Us', 'Ação/Aventura', 'PS3 / PS4 / PS5', 2013, 169.90, 9.9),
+('FIFA 23', 'Esportes', 'PC / Consoles', 2022, 249.90, 7.8),
+('Forza Horizon 5', 'Corrida', 'PC / Xbox Series', 2021, 249.90, 9.0),
+('Resident Evil 2 Remake', 'Terror', 'PC / PS4 / Xbox One', 2019, 129.90, 9.3),
+('Stardew Valley', 'Simulação', 'PC / Console / Mobile', 2016, 24.90, 9.4),
+('Portal 2', 'Puzzle', 'PC / Console', 2011, 29.90, 9.6);
+
