@@ -1,0 +1,21 @@
+        table, th, td, caption {
+            border: 1px solid black; /* aplica borda em todos */
+            border-collapse: collapse; /* evita borda dupla */
+        }
+        th, td, caption {
+            padding: 8px;
+            text-align: center;}
+
+            td[rowspan] {
+                vertical-align: middle;
+                text-align: center;
+                font-weight: bold;
+                background-color: lightskyblue;
+
+            }
+            tr:nth-child(even) {
+                background-color: lightskyblue;
+            }
+            tr:nth-child(odd) {
+                background-color: white;
+            }
