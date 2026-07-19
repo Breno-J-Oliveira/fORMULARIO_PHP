@@ -1,0 +1,83 @@
+body {
+    background-color: black;
+    margin: 0;
+}
+
+/* Container principal */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* se adapta */
+    gap: 20px; /* espaço entre os itens */
+    width: 100%;    /* ocupa toda largura */
+    max-width: 1200px; 
+    margin: 0 auto; /* centraliza no meio */
+}
+
+/* Cada bloco de foto */
+.fotos {
+    background-color: #fff;
+    border: 6px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.fotos:hover{
+    transform: scale(1.05);
+}
+
+.fotos img {
+    width: 100%;
+    height: auto; /* mantém proporção */
+}
+
+/* Título */
+.container {
+  align-items: center; 
+}
+h1 {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  white-space: nowrap; 
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+  border-right: 4px solid #fff; 
+  width: 0;
+  animation: typing 4s steps(25, end) forwards, blink 0.7s step-end infinite;
+}
+
+/* Animação de digitação */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* --- Responsividade --- */
+
+@media (min-width: 1025px) { 
+    .container {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) { 
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        transform: scale(0.8) translateY(-10%);
+    }
+}
+
+@media (max-width: 600px) { 
+    .container {
+        grid-template-columns: 1fr;
+        transform: scale(0.6)
+        translateY (-10%);
+    }
+}

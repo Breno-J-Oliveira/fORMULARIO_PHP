@@ -1,0 +1,73 @@
+CREATE TABLE livros(
+    id_livro int PRIMARY KEY AUTO_INCREMENT,
+    titulo varchar(25) NOT Null,
+    autor varchar(25),
+    genero varchar(25),
+    postagem date
+);
+
+CREATE TABLE usuario(
+    id_usuario int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(25) NOT NULL,
+    email varchar(50),
+    tipousuario ENUM('aluno','professor','funcionario')
+);
+
+CREATE TABLE emprestimos(
+    id_emprestimos int PRIMARY KEY AUTO_INCREMENT,
+    id_usuario int NOT null,
+    id_livro int not null,
+    dataemprestimos date,
+    datadedevolucao date
+);
+
+INSERT INTO livros (titulo, autor, genero, postagem)
+VALUES
+('Adrenocromo','Dsluqui','Ficção','2025-10-16'),
+('Luzitas','diogocasacomigo','romance','1980-07-18'),
+('A tropa da ak','MaiconKuster','Ficção','2001-02-20'),
+('Olavo de carvalho','olavo de carvalho','politica','1980-06-20'),
+('Cancer','Zaneti','Medicina','2025-10-16');
+
+INSERT INTO usuario (nome,email,tipousuario)
+VALUES
+('clebin','xiaomimatadordeporco@gmail.com','aluno'),
+('Gordão da xj','gustavolanches@gmail.com','funcionario'),
+('goatlipe','deusdetodasasrealidadespossiveis@gmail.com','professor');
+
+INSERT INTO emprestimos (id_usuario,id_livro,dataemprestimos,datadedevolucao)
+VALUES
+(1,2,'2025-10-10','2025-10-20'),
+(2,4,'2025-10-11','2025-10-25'),
+(3,1,'2025-10-12','2025-10-30');
+
+SELECT * FROM livros;
+
+SELECT * FROM usuario
+WHERE tipousuario = 'aluno';
+
+SELECT * FROM emprestimos
+WHERE MONTH(dataemprestimos) = 3;
+
+SELECT * FROM livros
+WHERE genero = 'Tecnologia'
+ORDER BY titulo ASC;
+
+UPDATE usuario
+SET email = 'diogocasacomigo@gmail.com'
+WHERE id_usuario = 1;
+
+UPDATE livros
+SET postagem = '1990-07-18'
+WHERE id_livro = 2;
+
+DELETE FROM livros
+WHERE id_livro = 3;
+
+DELETE FROM emprestimos
+WHERE dataemprestimos < CURDATE() - INTERVAL 15 DAY;
+
+
+
+
+
